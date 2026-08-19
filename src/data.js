@@ -3,7 +3,7 @@ export const profil = {
   namaBaris: ["Novarista", "Rokhma", "Wahyuningtyas"],
   peran: "Novarista Rokhma Wahyuningtyas",
   lokasi: "Lamongan — Jawa Timur",
-  foto: "/foto.jpg",
+  foto: `${import.meta.env.BASE_URL}foto.jpg`,
 
   telepon: "085706527154",
   teleponIntl: "6285706527154",
