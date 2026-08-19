@@ -1,0 +1,98 @@
+CARA PAKAI — Portofolio Novarista Rokhma Wahyuningtyas
+=======================================================
+
+Isi zip ini ada tiga cara pemakaian. Pilih salah satu.
+
+
+CARA 1 — LANGSUNG LIHAT (tanpa install apa pun)
+-----------------------------------------------
+Klik dua kali berkas:
+
+    preview.html
+
+Terbuka di browser, lengkap dengan animasi. Seluruh isinya — kode, gaya,
+dan pas foto — sudah menyatu di satu berkas, jadi tetap jalan walau tanpa
+internet. Cocok untuk mengecek hasil atau mengirim ke orang lain.
+
+(Internet hanya dibutuhkan agar huruf Google Fonts dan tombol Ekspor PDF
+berfungsi. Tanpa internet, tampilan memakai huruf bawaan komputer.)
+
+
+CARA 2 — VERSI SIAP UNGGAH (juga tanpa install)
+-----------------------------------------------
+Folder:
+
+    dist/
+
+Ini hasil build yang sudah jadi, siap diunggah ke internet:
+
+  1. Buka https://app.netlify.com/drop
+  2. Seret folder "dist" ke halaman itu
+  3. Selesai — dapat alamat website gratis
+
+Alternatif: Vercel, GitHub Pages, atau hosting biasa (upload isi dist).
+
+Catatan: dist/index.html tidak bisa dibuka dengan klik dua kali — browser
+memblokir berkas skrip yang dibuka tanpa server. Untuk melihat langsung,
+pakai preview.html (CARA 1).
+
+
+CARA 3 — MENGEDIT KODENYA (perlu install)
+-----------------------------------------
+Perlu Node.js versi 18 ke atas. Unduh di https://nodejs.org
+(pilih versi LTS, install seperti aplikasi biasa).
+
+Setelah Node.js terpasang, buka folder ini di Terminal / Command Prompt:
+
+    npm install
+    npm run dev
+
+Perintah "npm install" mengunduh React dan Vite otomatis — jadi framework
+tidak perlu dipasang manual. Butuh koneksi internet sekali saja.
+
+Lalu buka alamat yang muncul di layar (biasanya http://localhost:5173).
+
+Kalau sudah selesai mengedit, buat versi siap unggah dengan:
+
+    npm run build
+
+Hasilnya menimpa folder dist/.
+
+
+MENGUBAH ISI TULISAN
+--------------------
+Semua teks ada di satu berkas:
+
+    src/data.js
+
+- Ganti nomor WhatsApp: ubah "telepon" dan "teleponIntl"
+  (teleponIntl pakai format 62..., tanpa tanda + dan tanpa 0 di depan)
+- Ganti email: ubah "email"
+- Tambah pengalaman: tambahkan baris baru di daftar "lapangan"
+
+Ganti pas foto: timpa berkas public/foto.jpg dengan foto baru
+(nama berkas harus tetap foto.jpg), lalu jalankan npm run build lagi.
+
+Catatan: perubahan di src/ hanya muncul di preview.html dan dist/ setelah
+dibuild ulang lewat CARA 3.
+
+
+EKSPOR PDF
+----------
+Tombol "Ekspor PDF" ada di pojok kanan atas. Perlu koneksi internet karena
+library PDF-nya diambil dari CDN saat tombol ditekan.
+
+Cara cadangan: tekan Ctrl + P (Cmd + P di Mac) lalu pilih "Save as PDF".
+
+
+STRUKTUR BERKAS
+---------------
+preview.html        versi satu berkas, siap dibuka
+dist/               hasil build, siap diunggah
+src/data.js         SEMUA ISI TULISAN
+src/App.jsx         susunan halaman + animasi + tombol Ekspor PDF
+src/styles.css      warna, huruf, layout, animasi
+public/foto.jpg     pas foto
+index.html          kerangka halaman (untuk mode pengembangan)
+package.json        daftar dependensi
+README.md           dokumentasi versi lengkap
